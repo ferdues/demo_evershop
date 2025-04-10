@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "45c63d0f-3ad2-48f4-947c-41369a91feb9",
+		"name": "Live Test 01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16122497"
+	},
+	"item": [
+		{
+			"name": "Book List Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{bookstore_base_url}}/BookStore/v1/Books",
+					"host": [
+						"{{bookstore_base_url}}"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"alin2\",\r\n    \"password\" : \"#Alin123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bookstore_base_url}}/Account/v1/User",
+					"host": [
+						"{{bookstore_base_url}}"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add List Of Books",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "#Alin123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alin2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"userId\": \"39f7d308-079c-4060-a5cd-044b1a96287b\",\r\n\r\n    \"collectionOfIsbns\": [\r\n\r\n        {\r\n            \"isbn\": \"9781449325862\"\r\n    \r\n        }\r\n\r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bookstore_base_url}}/BookStore/v1/Books",
+					"host": [
+						"{{bookstore_base_url}}"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Model Token Generation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"alin2\",\r\n    \"password\" : \"#Alin123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bookstore_base_url}}/Account/v1/GenerateToken",
+					"host": [
+						"{{bookstore_base_url}}"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"GenerateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login View Model",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"alin2\",\r\n    \"password\" : \"#Alin123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{bookstore_base_url}}/Account/v1/Authorized",
+					"host": [
+						"{{bookstore_base_url}}"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"Authorized"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
